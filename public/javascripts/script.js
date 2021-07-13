@@ -20,7 +20,7 @@ const it1 = addFood(steak[0], '#steak', () => {
                 Promise.all([makeFood]).then(() =>{
                   setTimeout(() => {
                     alert('Dinner is served!')
-                  },1000)git 
+                  },1000)
                 })
               })
             })
