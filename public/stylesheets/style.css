@@ -75,3 +75,15 @@ button:hover {
     transform: rotateX(0deg) translate(-50%, -50%) scale(1);
   }
 }
+#mash-img {
+  position: relative;
+  opacity: 0;
+}
+#steak-img {
+  position: relative;
+  opacity: 0;
+}
+#brussel-img {
+  position: relative;
+  opacity: 0;
+}

@@ -7,25 +7,53 @@ for (let i = 0; i < mashPotatoes.length; i++) {
 }
 
 // Iteration 1 using callbacks
-addFood(steak[0], '#steak', () => {
-  // ... your code here
+const it1 = addFood(steak[0], '#steak', () => {
   addFood(steak[1], '#steak', () => {
-
+    addFood(steak[2], '#steak', () => {
+      addFood(steak[3], '#steak', () => {
+        addFood(steak[4], '#steak', () => {
+          addFood(steak[5], '#steak', () => {
+            addFood(steak[6], '#steak', () => {
+              addFood(steak[7], '#steak', () => {
+                const steakImg = document.getElementById('steak-img')
+                steakImg.style = 'opacity: 1'
+                Promise.all([makeFood]).then(() =>{
+                  setTimeout(() => {
+                    alert('Dinner is served!')
+                  },1000)git 
+                })
+              })
+            })
+          })
+        })
+      })
+    })
   })
-});
+})
 
 
 
 // Iteration 2 using `.then()`
-addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
-  // ... your code here
-  addFood(mashPotatoes[1], '#mashPotatoes')
-});
+const it2 =addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
+  addFood(mashPotatoes[1], '#mashPotatoes').then(() => {
+    addFood(mashPotatoes[2], '#mashPotatoes').then(() => {
+      addFood(mashPotatoes[3], '#mashPotatoes').then(() => {
+        addFood(mashPotatoes[4], '#mashPotatoes').then(() => {
+          const mashPotatoesImg = document.getElementById('mash-img')
+          mashPotatoesImg.style = 'opacity: 1'
+        })
+      })
+    })
+  })
+})
 
 // Iteration 3 using async/await
 
-  async function makeFood(step) {
-    // ... your code here
-    
+async function makeFood(step) {
+  for (let i = 0; i < step.length; i++) {
+    await addFood(step[i], '#brusselSprouts')
   }
-  makeFood(eachStep);
+  const brusselImg = document.getElementById('brussel-img')
+  brusselImg.style = 'opacity: 1'
+}
+makeFood(brusselSprouts)
